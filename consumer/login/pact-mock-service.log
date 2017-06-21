@@ -1,0 +1,66 @@
+I, [2017-06-21T08:42:16.355806 #802]  INFO -- : Cleared interactions before example ""
+I, [2017-06-21T08:42:16.360416 #802]  INFO -- : Registered expected interaction POST /api/v1/auth/authenticate/
+D, [2017-06-21T08:42:16.360648 #802] DEBUG -- : {
+  "description": "an authentication request",
+  "providerState": "An administrator user",
+  "request": {
+    "method": "post",
+    "path": "/api/v1/auth/authenticate/"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+    },
+    "body": {
+      "token": {
+        "json_class": "Pact::Term",
+        "data": {
+          "generate": "edff372c-55de-11e7-907b-a6006ad3dba0",
+          "matcher": {"json_class":"Regexp","o":0,"s":"[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}"}
+        }
+      }
+    }
+  }
+}
+I, [2017-06-21T08:42:16.365197 #802]  INFO -- : Received request POST /api/v1/auth/authenticate/
+D, [2017-06-21T08:42:16.365331 #802] DEBUG -- : {
+  "path": "/api/v1/auth/authenticate/",
+  "query": "",
+  "method": "post",
+  "body": {
+    "username": "your_admin_user",
+    "password": "your_password"
+  },
+  "headers": {
+    "Content-Length": "60",
+    "Content-Type": "application/json",
+    "Host": "localhost:9191",
+    "Connection": "keep-alive",
+    "Accept-Encoding": "gzip, deflate",
+    "Accept": "*/*",
+    "User-Agent": "python-requests/2.12.3",
+    "Version": "HTTP/1.1"
+  }
+}
+I, [2017-06-21T08:42:16.365477 #802]  INFO -- : Found matching response for POST /api/v1/auth/authenticate/
+D, [2017-06-21T08:42:16.365603 #802] DEBUG -- : {
+  "status": 200,
+  "headers": {
+  },
+  "body": {
+    "token": {
+      "json_class": "Pact::Term",
+      "data": {
+        "generate": "edff372c-55de-11e7-907b-a6006ad3dba0",
+        "matcher": {
+          "json_class": "Regexp",
+          "o": 0,
+          "s": "[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}"
+        }
+      }
+    }
+  }
+}
+I, [2017-06-21T08:42:16.369984 #802]  INFO -- : Verifying - interactions matched for example ""
+I, [2017-06-21T08:42:16.374703 #802]  INFO -- : Writing pact with details {:pact_dir=>"./consumer_app_and_api_contracts", :consumer=>{:name=>"consumer_app"}, :provider=>{:name=>"provider_api"}}
+I, [2017-06-21T08:42:16.374813 #802]  INFO -- : Writing pact for provider_api to ./consumer_app_and_api_contracts/consumer_app-provider_api.json
